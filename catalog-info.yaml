@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: go-bvovytvq-gitops
+  description: This is GitOps manifest for go-bvovytvq   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=go-bvovytvq
+    backstage.io/kubernetes-id: go-bvovytvq 
+    backstage.io/techdocs-ref: dir:. 
+    github.com/project-slug: rhtap-rhdh-qe/go-bvovytvq-gitops
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:go-bvovytvq
